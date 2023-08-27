@@ -51,7 +51,7 @@ export class LoginManager {
     e.preventDefault();
     const username = this._nameInput.value.toLowerCase();
     const password = this._passwordInput.value;
-
+  
     const validLogin = this._loginInfo.some(
       (info) =>
         info.username === username &&
@@ -59,13 +59,29 @@ export class LoginManager {
         info.username !== "" &&
         info.password !== ""
     );
-
+  
+    this._animationDuration = 500;
+  
+    // Apply transition styles
+    this._container1.style.transition = `opacity ${this._animationDuration}ms`;
+    this._container2.style.transition = `opacity ${this._animationDuration}ms`;
+  
     if (validLogin) {
-      this._container1.style.display = "none";
-      this._container.style.display = "block";
-      this._container.style.pointerEvents = "";
+      // Fade out the login container (container1)
       this._container1.style.opacity = 0;
-      this._container.style.opacity = 1;
+  
+      // After a delay, hide the login container and show the main container (container2)
+      setTimeout(() => {
+        this._container1.style.display = "none";
+        this._container2.style.display = "none";
+        this._container.style.display = "block"
+  
+        // Use a small delay before starting fade in to ensure the display block is applied
+        setTimeout(() => {
+          this._container.style.opacity = 1;
+        }, 0);
+      }, this._animationDuration);
+  
       this._welcomeMessage.style.display = "block";
       this._btnLogout.style.display = "block";
       this._welcomeText.innerHTML = `Welcome <br> ${username.toUpperCase()}`;
@@ -73,6 +89,7 @@ export class LoginManager {
       alert("Invalid username or password");
     }
   }
+  
 
   _register(e) {
     e.preventDefault();
