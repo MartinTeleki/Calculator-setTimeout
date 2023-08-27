@@ -93,22 +93,22 @@ export class LoginManager {
 
   _register(e) {
     e.preventDefault();
-
+  
     const usernameData = this._registerName.value.toLowerCase();
     const passwordData = this._registerPassword.value;
-
+  
     if (this._isUsernameTaken(usernameData)) {
       alert("This username is already taken.");
       return;
     }
-
+  
     const userData = { username: usernameData, password: passwordData };
-
+  
     if (!usernameData || !passwordData) {
       alert("Please fill in both username and password.");
       return;
     }
-
+  
     if (
       usernameData.includes(" ") ||
       passwordData.includes(" ") ||
@@ -117,28 +117,47 @@ export class LoginManager {
       alert("No spaces allowed :).");
       return;
     }
-
+  
     if (usernameData.length < 5 || usernameData.length > 12) {
       alert("Username must be between 5 and 12 characters.");
       return;
     }
-
+  
     if (passwordData.length < 5 || passwordData.length > 12) {
       alert("Password must be between 5 and 12 characters.");
       return;
     }
-
+  
     this._loginInfo.push(userData);
-
+  
+    this._animationDuration = 500;
+  
+    // Apply transition styles
+    this._container2.style.transition = `opacity ${this._animationDuration}ms`;
+    this._container1.style.transition = `opacity ${this._animationDuration}ms`;
+  
+    // Fade out the registration container (container2)
+    this._container2.style.opacity = 0;
+  
+    // After a delay, hide the registration container and show the login container (container1)
+    setTimeout(() => {
+      this._container2.style.display = "none";
+      this._container.style.display = "none";
+      this._historyContainer.style.display = "none";
+      this._container1.style.display = "block";
+  
+      // Use a small delay before starting fade in to ensure the display block is applied
+      setTimeout(() => {
+        this._container1.style.opacity = 1;
+      }, 0);
+    }, this._animationDuration);
+  
     this._registerName.value = "";
     this._registerPassword.value = "";
-    this._container.style.display = "none";
-    this._container2.style.display = "none";
-    this._historyContainer.style.display = "none";
-    this._container1.style.display = "block";
-
+  
     localStorage.setItem("loginInfo", JSON.stringify(this._loginInfo));
   }
+  
 
   _loadLoginInfoFromStorage() {
     const storedLoginInfo = localStorage.getItem("loginInfo");
@@ -148,6 +167,14 @@ export class LoginManager {
   }
 
   _logout() {
+
+    this._container.style.transition = `opacity ${this._animationDuration}ms`;
+
+    this._animationDuration = 500
+    this._container.style.opacity = 0
+
+
+    setTimeout(() => {
     this._inputText.textContent = "";
     this._nameInput.value = "";
     this._passwordInput.value = "";
@@ -161,6 +188,7 @@ export class LoginManager {
     this._container1.style.opacity = "1";
     this._welcomeMessage.style.display = "none";
     // this._historyText.style.display = "none";
+    }, this._animationDuration)
   }
 
   _isUsernameTaken(username) {
