@@ -27,20 +27,16 @@ export class HistoryManager {
       writeNumber.value += result;
       writeNumber.focus();
     });
-
-    setTimeout(() => {
     historyContainer.style.opacity = 1;
     historyContainer.style.display = "block";
-    }, 1000)
-
     this._historyList.appendChild(listItem);
 
-    this._delay = this._firstDisplay ? 700 : 350;
+    const delay = this._firstDisplay ? 700 : 350;
     this._firstDisplay = false;
 
     setTimeout(() => {
       listItem.style.opacity = 1;
-    }, this._delay);
+    }, delay);
   }
 
   _clearHistory() {

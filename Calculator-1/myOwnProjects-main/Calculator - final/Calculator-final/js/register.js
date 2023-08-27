@@ -16,45 +16,55 @@ export class RegistrationManager {
       "#show-password-register"
     );
     this._passwordInput = document.querySelector("#register-password");
-    console.log(this._registrationInfo);
+
+    
+    this._animationDuration = 500;
 
     this._navLogin.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log("pes");
+      this._historyContainer.style.transition = `opacity ${this._animationDuration}ms`;
+      this._container2.style.transition = `opacity ${this._animationDuration}ms`;
+      this._container1.style.transition = `opacity ${this._animationDuration}ms`;
 
-
-      setTimeout(()=> {
-      this._historyContainer.style.display = "none";
-      this._historyContainer.style.opacity = "0";
-
-      this._container2.style.display = "none";
-      this._container2.style.opacity = "0";
-    }, 1000)
-
+      
+      this._historyContainer.style.opacity = 0;
+      this._container2.style.opacity = 0;
 
       setTimeout(() => {
-      this._container1.style.display = "block";
-      this._container1.style.opacity = "1";
-      }, 1000)
+        this._historyContainer.style.display = "none";
+        this._container2.style.display = "none";
+        this._container1.style.display = "block";
+
+        
+        setTimeout(() => {
+          this._container1.style.opacity = 1;
+        }, 0);
+      }, this._animationDuration);
     });
 
     this._navRegister.addEventListener("click", (e) => {
       e.preventDefault();
+      this._historyContainer.style.transition = `opacity ${this._animationDuration}ms`;
+      this._container.style.transition = `opacity ${this._animationDuration}ms`;
+      this._container1.style.transition = `opacity ${this._animationDuration}ms`;
+      this._container2.style.transition = `opacity ${this._animationDuration}ms`;
+
+
+      this._historyContainer.style.opacity = 0;
+      this._container.style.opacity = 0;
+      this._container1.style.opacity = 0;
+
+      setTimeout(() => {
+        this._historyContainer.style.display = "none";
+        this._container.style.display = "none";
+        this._container1.style.display = "none";
+        this._container2.style.display = "block";
+
       
-      setTimeout(() => {
-      this._historyContainer.style.display = "none";
-      this._historyContainer.style.opacity = "0";
-      this._container.style.display = "none";
-      this._container.style.opacity = "0";
-      this._container1.style.display = "none";
-      this._container1.style.opacity = "0";
-      }, 1000)
-
-      setTimeout(() => {
-      this._container2.style.display = "block";
-      this._container2.style.opacity = "1";
-
-      },1000)
+        setTimeout(() => {
+          this._container2.style.opacity = 1;
+        }, 0);
+      }, this._animationDuration);
     });
 
     this._labels2.forEach((label) => {
