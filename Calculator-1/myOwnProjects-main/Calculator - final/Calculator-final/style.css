@@ -81,6 +81,100 @@ body {
   transform: scale(0.96);
 }
 
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--primary-border-color);
+  padding: 40px;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.input#username,
+.input#password {
+  z-index: 1;
+}
+
+.input--text-1,
+.input--text-2 {
+  width: 160px;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn--result {
+  width: 120px;
+  height: 40px;
+  margin: 10px;
+  padding: 2px 5px;
+  text-transform: uppercase;
+  background-color: var(--primary-btn-color);
+  border-radius: 4px;
+}
+
+.btn--result:hover {
+  background-color: var(--secondary-btn-color);
+}
+
+.btn--result:active {
+  transform: scale(0.96);
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--primary-border-color);
+  padding: 40px;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.input#username,
+.input#password {
+  z-index: 1;
+}
+
+.input--text-1,
+.input--text-2 {
+  width: 160px;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn--result {
+  width: 120px;
+  height: 40px;
+  margin: 10px;
+  padding: 2px 5px;
+  text-transform: uppercase;
+  background-color: var(--primary-btn-color);
+  border-radius: 4px;
+}
+
+.btn--result:hover {
+  background-color: var(--secondary-btn-color);
+}
+
+.btn--result:active {
+  transform: scale(0.96);
+}
+
 .btn-group {
   display: flex;
   justify-content: center;
@@ -514,7 +608,7 @@ html.dark {
 
 
 .needle {
-  background-color: var(--primary-btn-color);
+  background-color: var(--primary-border-color);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -567,8 +661,14 @@ html.dark {
   display: flex;
   font-size: 20px;
   left: 50%;
+  background-color: var(--primary-border-color);
+  border-radius: 4px;
+  color: var(--primary-btn-color);
   bottom: 100px;
+  padding: 8px 12px;
   transform: translateX(-50%);
+  z-index: 1;
+  
 }
 
 .date {
@@ -580,6 +680,7 @@ html.dark {
   left: 50%;
   bottom: 50px; 
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 
@@ -598,7 +699,9 @@ html.dark {
 }
 
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: 300px) {
   .container,
   .form,
   .container-1,
@@ -627,3 +730,5 @@ html.dark {
     bottom: 10px;
   }
 }
+
+

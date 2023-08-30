@@ -88,6 +88,7 @@ const applyDarkMode = () => {
   circleElement.style.backgroundColor = "white";
   centerPoint.style.backgroundColor = "#e74c3c";
   point1.style.backgroundColor = "var(--secondary-color)";
+  dateElement.style.color = "white"
 };
 
 const applyLightMode = () => {
@@ -100,6 +101,9 @@ const applyLightMode = () => {
   minuteElement.style.backgroundColor = "black";
   circleElement.style.backgroundColor = "black";
   point1.style.backgroundColor = "var(--primary-color)";
+  timeElement.style.color = "white"
+  timeElement.style.backgroundColor = "black"
+  //dateElement.style.color = "white"
 };
 
 const setTime = () => {
