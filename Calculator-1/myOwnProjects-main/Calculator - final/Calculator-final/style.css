@@ -464,3 +464,166 @@ img {
   transition: linear 1s ease;
 }
 
+
+
+/* hodiny */
+
+
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  bottom: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 1;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  left: 100px;
+
+  
+  
+}
+
+.clock {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+
+.needle {
+  background-color: var(--primary-btn-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 45px;
+  width: 3px;
+  transform-origin: bottom center;
+  transition: all 0.8s ease-in;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 65px;
+}
+
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 75px;
+  background-color: #e74c3c;
+}
+
+.center-point {
+  background-color: #e74c3c;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.center-point1 {
+  content: "";
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.time {
+  position: absolute;
+  display: flex;
+  font-size: 20px;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+}
+
+.date {
+  position: absolute;
+  color: rgb(186, 183, 183);
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  left: 50%;
+  bottom: 50px; 
+  transform: translateX(-50%);
+}
+
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  transition: background-color 1.2s ease-in-out, color 1.2s ease-in-out;
+  font-size: 12px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container,
+  .form,
+  .container-1,
+  .container-2,
+  .clock-container {
+    width: 90%; 
+    max-width: 400px; 
+  }
+
+  .clock {
+    width: 120px;
+    height: 120px;
+  }
+
+  .time {
+    font-size: 30px;
+    bottom: 80px;
+  }
+
+  .date {
+    font-size: 12px;
+    bottom: 40px;
+  }
+
+  .toggle {
+    bottom: 10px;
+  }
+}
