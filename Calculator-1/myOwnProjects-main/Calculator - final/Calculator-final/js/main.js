@@ -8,7 +8,6 @@ import { Hours } from "./hours.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const historyList = document.querySelector(".history-list");
-
   const writeNumber = document.querySelector(".input--text-1");
   const displayResult = document.querySelector(".result");
 
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     writeNumber,
     displayResult
   );
-  const hours = new Hours();
 
   calculatorEventManager._attachEventListeners(
     historyManager,
@@ -32,4 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   _applyLabelEffect();
   calculatorApp.initialize();
 });
+
+
 
