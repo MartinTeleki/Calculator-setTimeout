@@ -498,7 +498,7 @@ img {
   border-bottom-color: var(--primary-btn-color);
 }
 
-.form-control-2 label {
+.form-control-2 label{
   position: absolute;
   top: 15px;
   left: 0px;
@@ -519,7 +519,8 @@ img {
 }
 
 #show-password-register,
-#show-password-login {
+#show-password-login,
+#show-password-register-control {
   position: absolute;
   bottom: 100%;
   left: 100%;
@@ -667,7 +668,7 @@ html.dark {
   bottom: 100px;
   padding: 8px 12px;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 1001;
   
 }
 

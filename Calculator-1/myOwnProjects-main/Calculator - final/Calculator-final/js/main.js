@@ -4,7 +4,7 @@ import { LoginManager } from "./login.js";
 import { CalculatorEventManager } from "./eventListeners.js";
 import { HistoryManager } from "./history.js";
 import { CalculatorApp } from "./calculatorModule.js";
-import { Hours } from "./hours.js";
+import { Hours } from "./hours.js"; // Přidejte tento import
 
 document.addEventListener("DOMContentLoaded", () => {
   const historyList = document.querySelector(".history-list");

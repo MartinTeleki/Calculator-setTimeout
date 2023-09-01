@@ -20,7 +20,8 @@ export class LoginManager {
     this._welcomeMessage = document.querySelector(".welcome-message");
     this._historyText = document.querySelector(".history-div");
     this._result = document.querySelector(".result");
-    this.inputText = document.querySelector(".input-text");
+    this._inputText = document.querySelector(".input-text");
+    this._registerPasswordControl = document.querySelector("#register-password-control")
     this._loginInfo = [];
     this._loadLoginInfoFromStorage();
 
@@ -51,6 +52,8 @@ export class LoginManager {
     e.preventDefault();
     const username = this._nameInput.value.toLowerCase();
     const password = this._passwordInput.value;
+    const passwordControlData = this._registerPasswordControl.value;
+    console.log(passwordControlData);
   
     const validLogin = this._loginInfo.some(
       (info) =>
@@ -62,21 +65,19 @@ export class LoginManager {
   
     this._animationDuration = 500;
   
-    // Apply transition styles
     this._container1.style.transition = `opacity ${this._animationDuration}ms`;
     this._container2.style.transition = `opacity ${this._animationDuration}ms`;
   
     if (validLogin) {
-      // Fade out the login container (container1)
+     
       this._container1.style.opacity = 0;
   
-      // After a delay, hide the login container and show the main container (container2)
+
       setTimeout(() => {
         this._container1.style.display = "none";
         this._container2.style.display = "none";
         this._container.style.display = "block"
   
-        // Use a small delay before starting fade in to ensure the display block is applied
         setTimeout(() => {
           this._container.style.opacity = 1;
         }, 0);
@@ -96,16 +97,15 @@ export class LoginManager {
   
     const usernameData = this._registerName.value.toLowerCase();
     const passwordData = this._registerPassword.value;
+    const passwordControlData = this._registerPasswordControl.value;
   
     if (this._isUsernameTaken(usernameData)) {
       alert("This username is already taken.");
       return;
     }
   
-    const userData = { username: usernameData, password: passwordData };
-  
-    if (!usernameData || !passwordData) {
-      alert("Please fill in both username and password.");
+    if (!usernameData || !passwordData || !passwordControlData) {
+      alert("Please fill in all fields.");
       return;
     }
   
@@ -128,25 +128,32 @@ export class LoginManager {
       return;
     }
   
+    if (passwordData !== passwordControlData) {
+      alert("Passwords do not match.");
+      return;
+    }
+  
+    const userData = { username: usernameData, password: passwordData };
+  
     this._loginInfo.push(userData);
   
     this._animationDuration = 500;
   
-    // Apply transition styles
+
     this._container2.style.transition = `opacity ${this._animationDuration}ms`;
     this._container1.style.transition = `opacity ${this._animationDuration}ms`;
   
-    // Fade out the registration container (container2)
+   
     this._container2.style.opacity = 0;
   
-    // After a delay, hide the registration container and show the login container (container1)
+  
     setTimeout(() => {
       this._container2.style.display = "none";
       this._container.style.display = "none";
       this._historyContainer.style.display = "none";
       this._container1.style.display = "block";
   
-      // Use a small delay before starting fade in to ensure the display block is applied
+   
       setTimeout(() => {
         this._container1.style.opacity = 1;
       }, 0);
@@ -154,6 +161,7 @@ export class LoginManager {
   
     this._registerName.value = "";
     this._registerPassword.value = "";
+    this._registerPasswordControl.value = "";
   
     localStorage.setItem("loginInfo", JSON.stringify(this._loginInfo));
   }

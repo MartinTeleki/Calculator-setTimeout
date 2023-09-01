@@ -15,7 +15,12 @@ export class RegistrationManager {
     this._showPasswordCheckbox = document.querySelector(
       "#show-password-register"
     );
+    this._showPasswordCheckboxControl = document.querySelector(
+      "#show-password-register-control"
+    );
     this._passwordInput = document.querySelector("#register-password");
+    this._registerPasswordControl = document.querySelector("#register-password-control");
+
 
     
     this._animationDuration = 500;
@@ -83,6 +88,14 @@ export class RegistrationManager {
         this._passwordInput.type = "text";
       } else {
         this._passwordInput.type = "password";
+      }
+    });
+
+    this._showPasswordCheckboxControl.addEventListener("change", () => {
+      if (this._showPasswordCheckboxControl.checked) {
+        this._registerPasswordControl.type = "text"; 
+      } else {
+        this._registerPasswordControl.type = "password"; 
       }
     });
   }
