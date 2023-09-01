@@ -4,8 +4,8 @@ export class HistoryManager {
     this._maxResults = maxResults;
     this._previousResults = [];
     this._resultCounter = 0;
+    console.log(this._previousResults);
   }
-
   _appendToHistory(result) {
     const writeNumber = document.querySelector(".input--text-1");
     const historyContainer = document.querySelector(".history");
@@ -42,5 +42,6 @@ export class HistoryManager {
   _clearHistory() {
     this._previousResults.splice(0, this._previousResults.length);
     this._historyList.textContent = "";
+  
   }
 }

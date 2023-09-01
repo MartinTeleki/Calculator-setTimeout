@@ -1,3 +1,7 @@
+
+
+import { HistoryManager } from "./history.js";
+
 export class LoginManager {
   constructor() {
     this._labels = document.querySelectorAll(".form-control-1 label");
@@ -23,6 +27,8 @@ export class LoginManager {
     this._inputText = document.querySelector(".input--text-1");
     this._registerPasswordControl = document.querySelector("#register-password-control")
     this._loginInfo = [];
+    this._historyData = [];
+
     this._loadLoginInfoFromStorage();
     console.log(this._inputText);
     this._labels.forEach((label) => {
@@ -34,7 +40,7 @@ export class LoginManager {
         )
         .join("");
     });
-
+    console.log(this._historyData);
     this._loginButton.addEventListener("click", this._login.bind(this));
     this._btnRegister.addEventListener("click", this._register.bind(this));
     this._btnLogout.addEventListener("click", this._logout.bind(this));
@@ -46,6 +52,14 @@ export class LoginManager {
         this._passwordInput.type = "password";
       }
     });
+
+    this._historyManager = new HistoryManager(
+      document.querySelector(".history-list")
+      
+      );
+      console.log(this._historyManager);
+     
+      
   }
 
   _login(e) {
