@@ -585,6 +585,16 @@ html.dark {
 
 .toggle:focus {
   outline: none;
+  /* transform: scale(0.96); */
+}
+
+/* .toggle:active {
+  transform: scale(0.88);
+} */
+
+
+.container-4{
+  display: none;
 }
 
 .clock-container {

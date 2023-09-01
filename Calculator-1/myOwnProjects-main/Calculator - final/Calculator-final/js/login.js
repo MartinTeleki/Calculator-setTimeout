@@ -20,11 +20,11 @@ export class LoginManager {
     this._welcomeMessage = document.querySelector(".welcome-message");
     this._historyText = document.querySelector(".history-div");
     this._result = document.querySelector(".result");
-    this._inputText = document.querySelector(".input-text");
+    this._inputText = document.querySelector(".input--text-1");
     this._registerPasswordControl = document.querySelector("#register-password-control")
     this._loginInfo = [];
     this._loadLoginInfoFromStorage();
-
+    console.log(this._inputText);
     this._labels.forEach((label) => {
       label.innerHTML = label.textContent
         .split("")
@@ -175,29 +175,39 @@ export class LoginManager {
   }
 
   _logout() {
-
+    this._animationDuration = 500;
+  
+   
     this._container.style.transition = `opacity ${this._animationDuration}ms`;
-
-    this._animationDuration = 500
-    this._container.style.opacity = 0
-
-
+    this._historyContainer.style.transition = `opacity ${this._animationDuration}ms`;
+  
+    this._container.style.opacity = 0;
+    this._historyContainer.style.opacity = 0;
+  
     setTimeout(() => {
-    this._inputText.textContent = "";
-    this._nameInput.value = "";
-    this._passwordInput.value = "";
-    this._welcomeText.textContent = "";
-    this._result.textContent = "";
-    this._container2.style.display = "none";
-    this._container.style.display = "none";
-    this._btnLogout.style.display = "none";
-    this._historyContainer.style.display = "none";
-    this._container1.style.display = "block";
-    this._container1.style.opacity = "1";
-    this._welcomeMessage.style.display = "none";
-    // this._historyText.style.display = "none";
-    }, this._animationDuration)
+      this._inputText.textContent = "";
+      this._nameInput.value = "";
+      this._passwordInput.value = "";
+      this._welcomeText.textContent = "";
+      this._result.textContent = "";
+      this._container2.style.display = "none";
+      this._btnLogout.style.display = "none";
+  
+     
+      this._container1.style.opacity = 1;
+  
+    
+      this._historyContainer.style.display = "none";
+   
+      this._container1.style.display = "block";
+  
+      this._welcomeMessage.style.display = "none";
+     
+    }, this._animationDuration);
   }
+  
+  
+  
 
   _isUsernameTaken(username) {
     return this._loginInfo.some((info) => info.username === username);

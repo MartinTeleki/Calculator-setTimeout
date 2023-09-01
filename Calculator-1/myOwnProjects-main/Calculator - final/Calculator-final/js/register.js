@@ -10,6 +10,7 @@ export class RegistrationManager {
     this._registerPassword = document.querySelector("#register-password");
     this._btnRegister = document.querySelector(".btn-register");
     this._historyContainer = document.querySelector(".history");
+    this._clockContainer = document.querySelector(".container-4")
     this._registrationInfo = [];
 
     this._showPasswordCheckbox = document.querySelector(
@@ -39,6 +40,7 @@ export class RegistrationManager {
         this._historyContainer.style.display = "none";
         this._container2.style.display = "none";
         this._container1.style.display = "block";
+        this._clockContainer.style.display = "block"
 
         
         setTimeout(() => {
@@ -64,6 +66,8 @@ export class RegistrationManager {
         this._container.style.display = "none";
         this._container1.style.display = "none";
         this._container2.style.display = "block";
+        this._clockContainer.style.display = "none"
+        
 
       
         setTimeout(() => {
