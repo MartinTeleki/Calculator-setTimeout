@@ -7,7 +7,7 @@ export class HistoryManager {
     console.log(this._previousResults);
   }
   _appendToHistory(result) {
-    const writeNumber = document.querySelector(".input--text-1");
+    const writeNumber = document.querySelector(".input--text-login");
     const historyContainer = document.querySelector(".history");
     this._resultNumberElement = document.querySelector(".result-number");
 

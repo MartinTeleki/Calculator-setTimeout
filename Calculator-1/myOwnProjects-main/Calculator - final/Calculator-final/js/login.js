@@ -16,7 +16,6 @@ export class LoginManager {
     this._btnRegister = document.querySelector(".btn-register");
     this._registerName = document.querySelector("#register-name");
     this._registerPassword = document.querySelector("#register-password");
-    this._inputText = document.querySelector(".input--text-login");
     this._btnLogout = document.querySelector(".btn--logout");
     this._historyContainer = document.querySelector(".history");
     this._welcomeText = document.querySelector(".welcome-message");

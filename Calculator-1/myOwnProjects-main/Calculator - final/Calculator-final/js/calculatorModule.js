@@ -4,12 +4,12 @@ export class CalculatorApp {
   constructor() {
     this._historyContainer = document.querySelector(".history");
     this._historyList = document.querySelector(".history-list");
-    this._writeNumber = document.querySelector(".input--text-1");
+    this._writeNumber = document.querySelector(".input--text-login");
     this._calculateResult = document.querySelector(".btn--result");
     this._displayResult = document.querySelector(".result");
     this._historyItems = this._historyList.querySelectorAll(".history-div");
     this._equals = document.querySelector(".btn--equals");
-    this._inputText = document.querySelector(".input--text-1");
+    this._inputText = document.querySelector(".input--text-login");
     this._backNumber = document.querySelector(".btn--back");
     this._deleteNumber = document.querySelector(".btn--delete");
     this._closeButton = document.querySelector(".btn--close");
