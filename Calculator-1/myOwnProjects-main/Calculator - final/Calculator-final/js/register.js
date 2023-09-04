@@ -88,13 +88,13 @@ export class RegistrationManager {
 
     
     this._showPasswordCheckbox.addEventListener("change", () => {
-      
-      this._showPasswordCheckbox.checked === this._passwordInput.type ? "text" : "password"
+      this._passwordInput.type = this._showPasswordCheckbox.checked ? "text" : "password"
+     
     });
 
-    this._showPasswordCheckboxControl.addEventListener("change", () => {
 
-      this._showPasswordCheckboxControl.checked === this._registerPasswordControl.type ? "text"  : "password"
-    });
-  }
+  this._showPasswordCheckboxControl.addEventListener("change", () => {
+    this._registerPasswordControl.type = this._showPasswordCheckboxControl.checked ? "text" : "password";
+  });
+}
 }

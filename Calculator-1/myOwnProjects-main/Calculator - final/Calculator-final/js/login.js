@@ -58,7 +58,7 @@ this._btnRegister.addEventListener("click", this._register.bind(this));
     this._btnLogout.addEventListener("click", this._logout.bind(this));
 
     this._showPasswordCheckbox.addEventListener("change", () => {
-        this._showPasswordCheckbox.checked === this._passwordInput.type ? "text" : "password"
+      this._passwordInput.type = this._showPasswordCheckbox.checked ? "text" : "password";
     });
 
     this._historyManager = new HistoryManager(
