@@ -1,5 +1,5 @@
 export function _applyLabelEffect() {
-  const labels = document.querySelectorAll(".form-control-1 label");
+  const labels = document.querySelectorAll(".form-control-login label");
 
   labels.forEach((label) => {
     label.innerHTML = label.textContent

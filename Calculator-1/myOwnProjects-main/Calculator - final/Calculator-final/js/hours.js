@@ -63,8 +63,8 @@ export class Hours {
       this._toggleElement.textContent = "Light mode";
       this._toggleElement.style.color = "black";
       this._timeElement.style.color = "white";
-      this._hourElement.style.backgroundColor = "white";
-      this._minuteElement.style.backgroundColor = "white";
+      this._hourElement.style.backgroundColor = "grey";
+      this._minuteElement.style.backgroundColor = "grey";
       this._circleElement.style.backgroundColor = "white";
       this._centerPoint.style.backgroundColor = "#e74c3c";
       this._point1.style.backgroundColor = "var(--secondary-color)";

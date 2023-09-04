@@ -24,7 +24,7 @@ body {
 
 
 
-.container {
+.container-calculator {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -329,7 +329,7 @@ img {
 
 /* přihlášení */
 
-.container-1 {
+.container-login {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -345,12 +345,12 @@ img {
   transition: opacity 1s;
 }
 
-.container-1 h1 {
+.container-login h1 {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.container-1 a {
+.container-login a {
   text-decoration: none;
   color: var(--primary-span-color);
 }
@@ -374,17 +374,17 @@ img {
   transform: scale(0.88);
 }
 
-.text-1 {
+.text-login {
   margin-top: 30px;
 }
 
-.form-control-1 {
+.form-control-login {
   position: relative;
   margin: 20px 0 40px 0;
   width: 300px;
 }
 
-.form-control-1 input {
+.form-control-login input {
   background-color: transparent;
   border: 0;
   border-bottom: 2px #fff solid;
@@ -395,35 +395,35 @@ img {
   color: var(--secondary-bg-color);
 }
 
-.form-control-1 input:focus,
-.form-control-1 input:valid {
+.form-control-login input:focus,
+.form-control-login input:valid {
   border-color: transparent;
   outline: 0;
   color: var(--secondary-bg-color);
 }
 
-.form-control-1 label {
+.form-control-login label {
   position: absolute;
   top: 15px;
   left: 0px;
   pointer-events: none;
 }
 
-.form-control-1 label span {
+.form-control-login label span {
   display: inline-block;
   font-size: 18px;
   min-width: 5px;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.form-control-1 input:focus + label span,
-.form-control-1 input:valid + label span {
+.form-control-login input:focus + label span,
+.form-control-login input:valid + label span {
   color: lightblue;
   transform: translateY(-30px);
 }
 /*  */
 
-.container-2 {
+.container-register {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -437,12 +437,12 @@ img {
   transition: opacity 1s;
 }
 
-.container-2 h1 {
+.container-register h1 {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.container-2 a {
+.container-register a {
   text-decoration: none;
   color: var(--primary-span-color);
 }
@@ -469,18 +469,18 @@ img {
   transform: scale(0.88);
 }
 
-.text-2 {
+.text-register {
   margin-top: 30px;
 }
 
-.form-control-2 {
+.form-control-register {
   position: relative;
   margin: 20px 0 40px 0;
   width: 300px;
   font-size: 18px;
 }
 
-.form-control-2 input {
+.form-control-register input {
   background-color: transparent;
   border: 0;
   border-bottom: 2px #fff solid;
@@ -491,29 +491,29 @@ img {
   color: var(--secondary-bg-color);
 }
 
-.form-control-2 input:focus,
-.form-control-2 input:valid {
+.form-control-register input:focus,
+.form-control-register input:valid {
   border-color: transparent;
   outline: 0;
   border-bottom-color: var(--primary-btn-color);
 }
 
-.form-control-2 label{
+.form-control-register label{
   position: absolute;
   top: 15px;
   left: 0px;
   pointer-events: none;
 }
 
-.form-control-2 label span {
+.form-control-register label span {
   display: inline-block;
   font-size: 18px;
   min-width: 5px;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.form-control-2 input:focus + label span,
-.form-control-2 input:valid + label span {
+.form-control-register input:focus + label span,
+.form-control-register input:valid + label span {
   color: var(--primary-span-color);
   transform: translateY(-30px);
 }
@@ -593,7 +593,7 @@ html.dark {
 } */
 
 
-.container-4{
+.container-clock{
   display: none;
 }
 

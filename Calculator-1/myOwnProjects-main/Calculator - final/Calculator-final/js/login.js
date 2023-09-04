@@ -4,19 +4,19 @@ import { HistoryManager } from "./history.js";
 
 export class LoginManager {
   constructor() {
-    this._labels = document.querySelectorAll(".form-control-1 label");
+    this._labels = document.querySelectorAll(".form-control-login label");
     this._loginButton = document.querySelector(".btn-login");
     this._nameInput = document.querySelector("#name");
     this._passwordInput = document.querySelector("#password");
-    this._loginForm = document.querySelector(".form-control-1");
-    this._container = document.querySelector(".container");
-    this._container1 = document.querySelector(".container-1");
-    this._container2 = document.querySelector(".container-2");
+    this._loginForm = document.querySelector(".form-control-login");
+    this._containerCalculator = document.querySelector(".container-calculator");
+    this._containerLogin = document.querySelector(".container-login");
+    this._containerRegister = document.querySelector(".container-register");
     this._navLogin = document.querySelector(".nav-login");
     this._btnRegister = document.querySelector(".btn-register");
     this._registerName = document.querySelector("#register-name");
     this._registerPassword = document.querySelector("#register-password");
-    this._inputText = document.querySelector(".input--text-1");
+    this._inputText = document.querySelector(".input--text-login");
     this._btnLogout = document.querySelector(".btn--logout");
     this._historyContainer = document.querySelector(".history");
     this._welcomeText = document.querySelector(".welcome-message");
@@ -24,7 +24,7 @@ export class LoginManager {
     this._welcomeMessage = document.querySelector(".welcome-message");
     this._historyText = document.querySelector(".history-div");
     this._result = document.querySelector(".result");
-    this._inputText = document.querySelector(".input--text-1");
+    this._inputText = document.querySelector(".input--text-login");
     this._registerPasswordControl = document.querySelector("#register-password-control")
     this._loginInfo = [];
     this._historyData = [];
@@ -79,21 +79,21 @@ export class LoginManager {
   
     this._animationDuration = 500;
   
-    this._container1.style.transition = `opacity ${this._animationDuration}ms`;
-    this._container2.style.transition = `opacity ${this._animationDuration}ms`;
+    this._containerLogin.style.transition = `opacity ${this._animationDuration}ms`;
+    this._containerRegister.style.transition = `opacity ${this._animationDuration}ms`;
   
     if (validLogin) {
      
-      this._container1.style.opacity = 0;
+      this._containerLogin.style.opacity = 0;
   
 
       setTimeout(() => {
-        this._container1.style.display = "none";
-        this._container2.style.display = "none";
-        this._container.style.display = "block"
+        this._containerLogin.style.display = "none";
+        this._containerRegister.style.display = "none";
+        this._containerCalculator.style.display = "block"
   
         setTimeout(() => {
-          this._container.style.opacity = 1;
+          this._containerCalculator.style.opacity = 1;
         }, 0);
       }, this._animationDuration);
   
@@ -154,22 +154,22 @@ export class LoginManager {
     this._animationDuration = 500;
   
 
-    this._container2.style.transition = `opacity ${this._animationDuration}ms`;
-    this._container1.style.transition = `opacity ${this._animationDuration}ms`;
+    this._containerRegister.style.transition = `opacity ${this._animationDuration}ms`;
+    this._containerLogin.style.transition = `opacity ${this._animationDuration}ms`;
   
    
-    this._container2.style.opacity = 0;
+    this._containerRegister.style.opacity = 0;
   
   
     setTimeout(() => {
-      this._container2.style.display = "none";
-      this._container.style.display = "none";
+      this._containerRegister.style.display = "none";
+      this._containerCalculator.style.display = "none";
       this._historyContainer.style.display = "none";
-      this._container1.style.display = "block";
+      this._containerLogin.style.display = "block";
   
    
       setTimeout(() => {
-        this._container1.style.opacity = 1;
+        this._containerLogin.style.opacity = 1;
       }, 0);
     }, this._animationDuration);
   
@@ -192,10 +192,10 @@ export class LoginManager {
     this._animationDuration = 500;
   
    
-    this._container.style.transition = `opacity ${this._animationDuration}ms`;
+    this._containerCalculator.style.transition = `opacity ${this._animationDuration}ms`;
     this._historyContainer.style.transition = `opacity ${this._animationDuration}ms`;
   
-    this._container.style.opacity = 0;
+    this._containerCalculator.style.opacity = 0;
     this._historyContainer.style.opacity = 0;
   
     setTimeout(() => {
@@ -204,16 +204,16 @@ export class LoginManager {
       this._passwordInput.value = "";
       this._welcomeText.textContent = "";
       this._result.textContent = "";
-      this._container2.style.display = "none";
+      this._containerRegister.style.display = "none";
       this._btnLogout.style.display = "none";
   
      
-      this._container1.style.opacity = 1;
+      this._containerLogin.style.opacity = 1;
   
     
       this._historyContainer.style.display = "none";
    
-      this._container1.style.display = "block";
+      this._containerLogin.style.display = "block";
   
       this._welcomeMessage.style.display = "none";
      

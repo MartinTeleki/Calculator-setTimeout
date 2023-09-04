@@ -1,16 +1,16 @@
 export class RegistrationManager {
   constructor() {
-    this._container = document.querySelector(".container");
-    this._container1 = document.querySelector(".container-1");
-    this._container2 = document.querySelector(".container-2");
+    this._containerCalculator = document.querySelector(".container-calculator");
+    this._containerLogin = document.querySelector(".container-login");
+    this._containerRegister = document.querySelector(".container-register");
     this._navLogin = document.querySelector(".nav-login");
     this._navRegister = document.querySelector(".nav-register");
-    this._labels2 = document.querySelectorAll(".form-control-2 label");
+    this._labels2 = document.querySelectorAll(".form-control-register label");
     this._registerName = document.querySelector("#register-name");
     this._registerPassword = document.querySelector("#register-password");
     this._btnRegister = document.querySelector(".btn-register");
     this._historyContainer = document.querySelector(".history");
-    this._clockContainer = document.querySelector(".container-4")
+    this._clockContainer = document.querySelector(".container-clock")
     this._registrationInfo = [];
 
     this._showPasswordCheckbox = document.querySelector(
@@ -29,22 +29,22 @@ export class RegistrationManager {
     this._navLogin.addEventListener("click", (e) => {
       e.preventDefault();
       this._historyContainer.style.transition = `opacity ${this._animationDuration}ms`;
-      this._container2.style.transition = `opacity ${this._animationDuration}ms`;
-      this._container1.style.transition = `opacity ${this._animationDuration}ms`;
+      this._containerRegister.style.transition = `opacity ${this._animationDuration}ms`;
+      this._containerLogin.style.transition = `opacity ${this._animationDuration}ms`;
 
       
       this._historyContainer.style.opacity = 0;
-      this._container2.style.opacity = 0;
+      this._containerRegister.style.opacity = 0;
 
       setTimeout(() => {
         this._historyContainer.style.display = "none";
-        this._container2.style.display = "none";
-        this._container1.style.display = "block";
+        this._containerRegister.style.display = "none";
+        this._containerLogin.style.display = "block";
         this._clockContainer.style.display = "block"
 
         
         setTimeout(() => {
-          this._container1.style.opacity = 1;
+          this._containerLogin.style.opacity = 1;
         }, 0);
       }, this._animationDuration);
     });
@@ -52,26 +52,26 @@ export class RegistrationManager {
     this._navRegister.addEventListener("click", (e) => {
       e.preventDefault();
       this._historyContainer.style.transition = `opacity ${this._animationDuration}ms`;
-      this._container.style.transition = `opacity ${this._animationDuration}ms`;
-      this._container1.style.transition = `opacity ${this._animationDuration}ms`;
-      this._container2.style.transition = `opacity ${this._animationDuration}ms`;
+      this._containerCalculator.style.transition = `opacity ${this._animationDuration}ms`;
+      this._containerLogin.style.transition = `opacity ${this._animationDuration}ms`;
+      this._containerRegister.style.transition = `opacity ${this._animationDuration}ms`;
 
 
       this._historyContainer.style.opacity = 0;
-      this._container.style.opacity = 0;
-      this._container1.style.opacity = 0;
+      this._containerCalculator.style.opacity = 0;
+      this._containerLogin.style.opacity = 0;
 
       setTimeout(() => {
         this._historyContainer.style.display = "none";
-        this._container.style.display = "none";
-        this._container1.style.display = "none";
-        this._container2.style.display = "block";
+        this._containerCalculator.style.display = "none";
+        this._containerLogin.style.display = "none";
+        this._containerRegister.style.display = "block";
         this._clockContainer.style.display = "none"
         
 
       
         setTimeout(() => {
-          this._container2.style.opacity = 1;
+          this._containerRegister.style.opacity = 1;
         }, 0);
       }, this._animationDuration);
     });
