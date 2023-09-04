@@ -5,6 +5,7 @@ export class CalculatorEventManager {
     this._displayResult = displayResult;
 
     this._historyContainer = document.querySelector(".history");
+    this._containerCalculator = document.querySelector(".container-calculator");
     this._historyList = document.querySelector(".history-list");
     this._writeNumber = document.querySelector(".input--text-login");
     this._calculateResult = document.querySelector(".btn--result");
@@ -42,16 +43,13 @@ export class CalculatorEventManager {
   _attachEventListeners() {
     this._buttons.forEach(({ element, symbol }) => {
       element.addEventListener("click", () => {
-        if (symbol === "=") {
-          this._performCalculation();
-        } else if (symbol === "e.key") {
-        } else {
-          this._appendSymbol(symbol);
-        }
+        symbol === "=" ? this._performCalculation() : this._appendSymbol(symbol)
+
+       
       });
     });
 
-    document.addEventListener("keydown", (e) => {
+    this._containerCalculator.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
         this._performCalculation();
@@ -79,7 +77,7 @@ export class CalculatorEventManager {
       this._writeNumber.value = "";
       this._displayResult.style.color = "red";
       this._displayResult.textContent = "Error";
-      console.log("Chyba při vyhodnocování výrazu:", error);
+      //console.log("Chyba při vyhodnocování výrazu:", error);
     }
   }
 }

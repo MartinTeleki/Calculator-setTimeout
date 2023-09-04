@@ -41,8 +41,20 @@ export class LoginManager {
         .join("");
     });
     console.log(this._historyData);
+    this._containerLogin.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+     
+        this._login.bind(this)()
+      }
+    });
     this._loginButton.addEventListener("click", this._login.bind(this));
-    this._btnRegister.addEventListener("click", this._register.bind(this));
+    this._containerRegister.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+     
+        this._register.bind(this)()
+      }
+    });
+this._btnRegister.addEventListener("click", this._register.bind(this));
     this._btnLogout.addEventListener("click", this._logout.bind(this));
 
     this._showPasswordCheckbox.addEventListener("change", () => {
@@ -58,8 +70,8 @@ export class LoginManager {
       
   }
 
-  _login(e) {
-    e.preventDefault();
+  _login() {
+    
     const username = this._nameInput.value.toLowerCase();
     const password = this._passwordInput.value;
     const passwordControlData = this._registerPasswordControl.value;
@@ -101,8 +113,8 @@ export class LoginManager {
     : alert("Invalid username or password");
     }
 
-  _register(e) {
-    e.preventDefault();
+  _register() {
+    
   
     const usernameData = this._registerName.value.toLowerCase();
     const passwordData = this._registerPassword.value;
