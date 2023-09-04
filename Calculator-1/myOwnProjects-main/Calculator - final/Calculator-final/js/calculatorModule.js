@@ -60,18 +60,14 @@ export class CalculatorApp {
     });
 
     this._equals.addEventListener("click", () => {
-      if (this._inputText.value === "") {
-        setTimeout(() => {
-          // this._writeNumber.focus();
-          this._historyContainer.style.display = "none";
-          this._historyContainer.style.opacity = "0";
-        }, 1000);
-      } else {
-        setTimeout(() => {
-          this._historyContainer.style.display = "block";
-          this._historyContainer.style.opacity = 1;
-        }, 1000);
-      }
+      this._historyContainer.style.display = "block";
+
+      this._historyContainer.style.opacity = 0;
+
+      setTimeout(() => {
+        this._historyContainer.style.opacity = 1;
+      }, 0);
+      this._historyContainer.style.transition = "opacity 1s ease-in-out";
     });
 
     this._updateEventListeners();

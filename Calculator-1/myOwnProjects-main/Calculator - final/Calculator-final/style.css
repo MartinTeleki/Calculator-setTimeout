@@ -23,8 +23,6 @@ body {
   min-height: 100vh;
 }
 
-
-
 .container-calculator {
   display: flex;
   flex-direction: column;
@@ -82,7 +80,6 @@ body {
   transform: scale(0.96);
 }
 
-
 .form {
   display: flex;
   flex-direction: column;
@@ -128,7 +125,6 @@ body {
 .btn--result:active {
   transform: scale(0.96);
 }
-
 
 .form {
   display: flex;
@@ -244,7 +240,7 @@ img {
   padding-top: 20px;
   border: 1px solid var(--primary-border-color);
   background-color: var(--secondary-bg-color);
-  display: flex;
+
   flex-direction: column;
   align-items: center;
   transition: opacity 1s;
@@ -253,6 +249,8 @@ img {
   border-radius: 4px;
   overflow-y: auto;
   overflow-x: auto;
+  display: none;
+  transition: opacity 1s, display 1s;
 }
 
 .history h2 {
@@ -499,7 +497,7 @@ img {
   border-bottom-color: var(--primary-btn-color);
 }
 
-.form-control-register label{
+.form-control-register label {
   position: absolute;
   top: 15px;
   left: 0px;
@@ -560,10 +558,7 @@ img {
   transition: linear 1s ease;
 }
 
-
-
 /* hodiny */
-
 
 html.dark {
   background-color: #111;
@@ -593,8 +588,7 @@ html.dark {
   transform: scale(0.88);
 } */
 
-
-.container-clock{
+.container-clock {
   display: none;
 }
 
@@ -605,8 +599,6 @@ html.dark {
   align-items: center;
   height: 100vh;
   left: 100px;
-
-
 }
 
 .clock {
@@ -616,7 +608,6 @@ html.dark {
   left: 50%;
   transform: translateX(-50%);
 }
-
 
 .needle {
   background-color: var(--primary-border-color);
@@ -693,7 +684,6 @@ html.dark {
   z-index: 1;
 }
 
-
 .date .circle {
   background-color: var(--primary-color);
   color: var(--secondary-color);
@@ -707,9 +697,6 @@ html.dark {
   transition: background-color 1.2s ease-in-out, color 1.2s ease-in-out;
   font-size: 12px;
 }
-
-
-
 
 @media screen and (max-width: 300px) {
   .container,
@@ -740,5 +727,3 @@ html.dark {
     bottom: 10px;
   }
 }
-
-
