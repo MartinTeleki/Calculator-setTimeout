@@ -5,6 +5,7 @@
   --primary-btn-color: #f0f0f0;
   --secondary-btn-color: #e0e0e0;
   --primary-span-color: lightblue;
+  --primaty-date-color: rgb(186, 183, 183);
 }
 
 * {
@@ -374,7 +375,7 @@ img {
   transform: scale(0.88);
 }
 
-.text-login {
+.text-logi {
   margin-top: 30px;
 }
 
@@ -573,13 +574,13 @@ html.dark {
   position: absolute;
   cursor: pointer;
   background-color: black;
-  color: white;
+  color: var(--primary-btn-color);
   border: 0;
   border-radius: 4px;
   padding: 8px 12px;
-  bottom: 0; 
-  left: 50%; 
-  transform: translateX(-50%); 
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
 }
 
@@ -602,11 +603,10 @@ html.dark {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 100vh;
   left: 100px;
 
-  
-  
+
 }
 
 .clock {
@@ -614,7 +614,7 @@ html.dark {
   width: 150px;
   height: 150px;
   left: 50%;
-  transform: translateX(-50%); 
+  transform: translateX(-50%);
 }
 
 
@@ -679,17 +679,16 @@ html.dark {
   padding: 8px 12px;
   transform: translateX(-50%);
   z-index: 1001;
-  
 }
 
 .date {
   position: absolute;
-  color: rgb(186, 183, 183);
+  color: var(--primaty-date-color);
   font-size: 14px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
   left: 50%;
-  bottom: 50px; 
+  bottom: 50px;
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -718,8 +717,8 @@ html.dark {
   .container-1,
   .container-2,
   .clock-container {
-    width: 90%; 
-    max-width: 400px; 
+    width: 90%;
+    max-width: 400px;
   }
 
   .clock {

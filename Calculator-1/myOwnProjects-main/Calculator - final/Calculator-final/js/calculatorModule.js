@@ -62,20 +62,17 @@ export class CalculatorApp {
     });
 
     this._equals.addEventListener("click", () => {
-      if (this._inputText === "") {
-
-        setTimeout(() => {
+      this._inputText === "" ? setTimeout(() => {
         this._historyContainer.style.display = "none";
         this._historyContainer.style.opacity = "0";
-        }, 1000)
-      } else {
+        }, 1000) :
+             setTimeout(() => {
+          this._historyContainer.style.display = "block";
+          this._historyContainer.style.opacity = 1;
+          }, 1000)
+        })
 
-        setTimeout(() => {
-        this._historyContainer.style.display = "block";
-        this._historyContainer.style.opacity = 1;
-        }, 1000)
-      }
-    });
+
 
     this._updateEventListeners();
   }

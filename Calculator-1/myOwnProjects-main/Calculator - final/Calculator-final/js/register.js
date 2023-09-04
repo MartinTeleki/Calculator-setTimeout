@@ -86,21 +86,15 @@ export class RegistrationManager {
         .join("");
     });
 
+    
     this._showPasswordCheckbox.addEventListener("change", () => {
-      console.log("pes");
-      if (this._showPasswordCheckbox.checked) {
-        this._passwordInput.type = "text";
-      } else {
-        this._passwordInput.type = "password";
-      }
+      
+      this._showPasswordCheckbox.checked === this._passwordInput.type ? "text" : "password"
     });
 
     this._showPasswordCheckboxControl.addEventListener("change", () => {
-      if (this._showPasswordCheckboxControl.checked) {
-        this._registerPasswordControl.type = "text"; 
-      } else {
-        this._registerPasswordControl.type = "password"; 
-      }
+
+      this._showPasswordCheckboxControl.checked === this._registerPasswordControl.type ? "text"  : "password"
     });
   }
 }

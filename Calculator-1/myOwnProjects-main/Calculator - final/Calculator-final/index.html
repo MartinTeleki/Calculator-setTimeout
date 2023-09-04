@@ -7,14 +7,14 @@
     <title>Document</title>
   </head>
   <body>
-    
+
     <div class="navbar">
     <div class="user-info">
       <span class="welcome-message"></span>
       <button class="btn--logout">Logout</button>
     </div>
   </div>
-  <div class="container-clock"> 
+  <div class="container-clock">
 
     <button class="toggle">Dark mode</button>
     <div class="clock-container">
@@ -25,14 +25,10 @@
         <div class="center-point"></div>
         <div class="center-point1"></div>
       </div>
-      
       <div class="time">12:00</div>
       <div class="date"><span class="circle"></span></div>
     </div>
   </div>
-
-
-    
     <div class="container-register">
       <h1>Register</h1>
       <form id="register-form">
@@ -40,70 +36,34 @@
           <input type="text" id="register-name" required autocomplete="username">
           <label for="register-name">name</label>
         </div>
-    
-        <!-- <div class="form-control-2">
-          <input type="email" id="register-email" required />
-          <label for="register-email">Email</label>
-        </div> -->
-    
         <div class="form-control-register">
-          <input type="password" id="register-password" required autocomplete="current-password">   
+          <input type="password" id="register-password" required autocomplete="current-password">
           <label for="register-password">password</label>
           <input type="checkbox" id="show-password-register">
-          
+
         </div>
 
         <div class="form-control-register">
           <input type="password" id="register-password-control" required />
           <label for="register-password-control">password control</label>
-          <input type="checkbox" id="show-password-register-control"> <!-- Nový checkbox pro kontrolu hesla -->
-        </div>
-
-        <!-- <div class="form-control-3">
-          <input type="password" id="register-password-control" required autocomplete="current-password">   
-          <label for="register-password">password controll</label>
           <input type="checkbox" id="show-password-register-control">
-        </div> -->
-    
+        </div>
         <button class="btn-register">Register</button>
-    
         <p class="text-register">Already have an account? <a href="#" class="nav-login">Login</a></p>
       </form>
     </div>
-
-
-
-
-    <!-- <div class="login-container"> -->
       <div class="container-login">
         <h1>Login</h1>
         <form action="">
           <div class="form-control-login">
             <input type="text" id="name" required autocomplete="username">
             <label for="">name</label>
-            <!-- <label for="">
-              <span style="transition-delay: 0ms">E</span>
-              <span style="transition-delay: 40ms">m</span>
-              <span style="transition-delay: 80ms">a</span>
-              <span style="transition-delay: 120ms">i</span>
-              <span style="transition-delay: 160ms">l</span>
-            </label> -->
           </div>
 
           <div class="form-control-login">
             <input type="password" id="password" required autocomplete="current-password">
             <label for="">password</label>
             <input type="checkbox" id="show-password-login">
-            <!-- <label for="">
-              <span style="transition-delay: 0ms">P</span>
-              <span style="transition-delay: 40ms">a</span>
-              <span style="transition-delay: 80ms">s</span>
-              <span style="transition-delay: 120ms">s</span>
-              <span style="transition-delay: 160ms">w</span>
-              <span style="transition-delay: 200ms">o</span>
-              <span style="transition-delay: 240ms">r</span>
-              <span style="transition-delay: 280ms">d</span>
-            </label> -->
           </div>
 
           <button class="btn-login">Login</button>
@@ -111,11 +71,9 @@
           <p class="text-login">Do u have an account? <a href="#" class="nav-register">Register</a></p>
         </form>
       </div>
-    
     <div class="container-calculator">
       <form action="" class="form">
         <input type="text" name="" id="" class="input--text-login" />
-        <!-- <input type="text" class="input--text-2"> -->
         <button type="button" class="btn--result">Delete history</button>
 
         <div class="btn--group-number">
@@ -204,13 +162,6 @@
       <ul class="history-list"></ul>
       <div class="result-number"></div>
       <div class="pagination">
-        <!-- <button class="pagination-back">
-          <img src="img/back.png" alt="" />
-        </button>
-        <button class="pagination-forward">
-          <img src="img/right-arrow.png" alt="" />
-        </button>
-      </div> -->
     </div>
 
     <script type="module" src="js/main.js"></script>

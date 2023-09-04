@@ -26,6 +26,7 @@ export class LoginManager {
     this._result = document.querySelector(".result");
     this._inputText = document.querySelector(".input--text-login");
     this._registerPasswordControl = document.querySelector("#register-password-control")
+    this._clockContainer = document.querySelector(".container-clock")
     this._loginInfo = [];
     this._historyData = [];
 
@@ -46,11 +47,7 @@ export class LoginManager {
     this._btnLogout.addEventListener("click", this._logout.bind(this));
 
     this._showPasswordCheckbox.addEventListener("change", () => {
-      if (this._showPasswordCheckbox.checked) {
-        this._passwordInput.type = "text";
-      } else {
-        this._passwordInput.type = "password";
-      }
+        this._showPasswordCheckbox.checked === this._passwordInput.type ? "text" : "password"
     });
 
     this._historyManager = new HistoryManager(
@@ -82,29 +79,28 @@ export class LoginManager {
     this._containerLogin.style.transition = `opacity ${this._animationDuration}ms`;
     this._containerRegister.style.transition = `opacity ${this._animationDuration}ms`;
   
-    if (validLogin) {
-     
-      this._containerLogin.style.opacity = 0;
-  
-
-      setTimeout(() => {
-        this._containerLogin.style.display = "none";
-        this._containerRegister.style.display = "none";
-        this._containerCalculator.style.display = "block"
+    validLogin
+    ? (() => {
+        this._containerLogin.style.opacity = 0;
   
         setTimeout(() => {
-          this._containerCalculator.style.opacity = 1;
-        }, 0);
-      }, this._animationDuration);
+          
+          this._containerLogin.style.display = "none";
+          this._containerRegister.style.display = "none";
+          this._containerCalculator.style.display = "block";
   
-      this._welcomeMessage.style.display = "block";
-      this._btnLogout.style.display = "block";
-      this._welcomeText.innerHTML = `Welcome <br> ${username.toUpperCase()}`;
-    } else {
-      alert("Invalid username or password");
+          setTimeout(() => {
+            this._containerCalculator.style.opacity = 1;
+          }, 0);
+        }, this._animationDuration);
+        
+        
+        this._welcomeMessage.style.display = "block";
+        this._btnLogout.style.display = "block";
+        this._welcomeText.innerHTML = `Welcome <br> ${username.toUpperCase()}`;
+      })()
+    : alert("Invalid username or password");
     }
-  }
-  
 
   _register(e) {
     e.preventDefault();
@@ -166,6 +162,7 @@ export class LoginManager {
       this._containerCalculator.style.display = "none";
       this._historyContainer.style.display = "none";
       this._containerLogin.style.display = "block";
+      this._clockContainer.style.display = "block"
   
    
       setTimeout(() => {
@@ -183,6 +180,7 @@ export class LoginManager {
 
   _loadLoginInfoFromStorage() {
     const storedLoginInfo = localStorage.getItem("loginInfo");
+    
     if (storedLoginInfo) {
       this._loginInfo = JSON.parse(storedLoginInfo);
     }
