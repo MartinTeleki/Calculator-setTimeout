@@ -26,6 +26,7 @@ export class LoginManager {
     this._inputText = document.querySelector(".input--text-login");
     this._registerPasswordControl = document.querySelector("#register-password-control")
     this._clockContainer = document.querySelector(".container-clock")
+    this._writeNumber = document.querySelector(".input--text-login");
     this._loginInfo = [];
     this._historyData = [];
 
@@ -105,7 +106,7 @@ this._btnRegister.addEventListener("click", this._register.bind(this));
           }, 0);
         }, this._animationDuration);
         
-        
+        this._writeNumber.focus();
         this._welcomeMessage.style.display = "block";
         this._btnLogout.style.display = "block";
         this._welcomeText.innerHTML = `Welcome <br> ${username.toUpperCase()}`;

@@ -62,16 +62,20 @@ export class CalculatorApp {
     });
 
     this._equals.addEventListener("click", () => {
-      this._inputText === "" ? setTimeout(() => {
-        this._historyContainer.style.display = "none";
-        this._historyContainer.style.opacity = "0";
-        }, 1000) :
-             setTimeout(() => {
+      if (this._inputText.value === "") {
+        setTimeout(() => {
+         // this._writeNumber.focus();
+          this._historyContainer.style.display = "none";
+          this._historyContainer.style.opacity = "0";
+        }, 1000);
+      } else {
+        setTimeout(() => {
           this._historyContainer.style.display = "block";
           this._historyContainer.style.opacity = 1;
-          }, 1000)
-        })
-
+        }, 1000);
+      }
+    });
+    
 
 
     this._updateEventListeners();
@@ -81,6 +85,7 @@ export class CalculatorApp {
     try {
       const expression = this._writeNumber.value;
       if (expression.trim() === "") {
+        
         return;
       }
       const vyhodnoť = new Function("return " + expression);
