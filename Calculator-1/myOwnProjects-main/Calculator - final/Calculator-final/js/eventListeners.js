@@ -43,9 +43,9 @@ export class CalculatorEventManager {
   _attachEventListeners() {
     this._buttons.forEach(({ element, symbol }) => {
       element.addEventListener("click", () => {
-        symbol === "=" ? this._performCalculation() : this._appendSymbol(symbol)
-
-       
+        symbol === "="
+          ? this._performCalculation()
+          : this._appendSymbol(symbol);
       });
     });
 

@@ -10,7 +10,7 @@ export class RegistrationManager {
     this._registerPassword = document.querySelector("#register-password");
     this._btnRegister = document.querySelector(".btn-register");
     this._historyContainer = document.querySelector(".history");
-    this._clockContainer = document.querySelector(".container-clock")
+    this._clockContainer = document.querySelector(".container-clock");
     this._registrationInfo = [];
 
     this._showPasswordCheckbox = document.querySelector(
@@ -20,10 +20,10 @@ export class RegistrationManager {
       "#show-password-register-control"
     );
     this._passwordInput = document.querySelector("#register-password");
-    this._registerPasswordControl = document.querySelector("#register-password-control");
+    this._registerPasswordControl = document.querySelector(
+      "#register-password-control"
+    );
 
-
-    
     this._animationDuration = 500;
 
     this._navLogin.addEventListener("click", (e) => {
@@ -32,7 +32,6 @@ export class RegistrationManager {
       this._containerRegister.style.transition = `opacity ${this._animationDuration}ms`;
       this._containerLogin.style.transition = `opacity ${this._animationDuration}ms`;
 
-      
       this._historyContainer.style.opacity = 0;
       this._containerRegister.style.opacity = 0;
 
@@ -40,9 +39,8 @@ export class RegistrationManager {
         this._historyContainer.style.display = "none";
         this._containerRegister.style.display = "none";
         this._containerLogin.style.display = "block";
-        this._clockContainer.style.display = "block"
+        this._clockContainer.style.display = "block";
 
-        
         setTimeout(() => {
           this._containerLogin.style.opacity = 1;
         }, 0);
@@ -56,7 +54,6 @@ export class RegistrationManager {
       this._containerLogin.style.transition = `opacity ${this._animationDuration}ms`;
       this._containerRegister.style.transition = `opacity ${this._animationDuration}ms`;
 
-
       this._historyContainer.style.opacity = 0;
       this._containerCalculator.style.opacity = 0;
       this._containerLogin.style.opacity = 0;
@@ -66,10 +63,8 @@ export class RegistrationManager {
         this._containerCalculator.style.display = "none";
         this._containerLogin.style.display = "none";
         this._containerRegister.style.display = "block";
-        this._clockContainer.style.display = "none"
-        
+        this._clockContainer.style.display = "none";
 
-      
         setTimeout(() => {
           this._containerRegister.style.opacity = 1;
         }, 0);
@@ -86,15 +81,17 @@ export class RegistrationManager {
         .join("");
     });
 
-    
     this._showPasswordCheckbox.addEventListener("change", () => {
-      this._passwordInput.type = this._showPasswordCheckbox.checked ? "text" : "password"
-     
+      this._passwordInput.type = this._showPasswordCheckbox.checked
+        ? "text"
+        : "password";
     });
 
-
-  this._showPasswordCheckboxControl.addEventListener("change", () => {
-    this._registerPasswordControl.type = this._showPasswordCheckboxControl.checked ? "text" : "password";
-  });
-}
+    this._showPasswordCheckboxControl.addEventListener("change", () => {
+      this._registerPasswordControl.type = this._showPasswordCheckboxControl
+        .checked
+        ? "text"
+        : "password";
+    });
+  }
 }

@@ -30,6 +30,3 @@ document.addEventListener("DOMContentLoaded", () => {
   _applyLabelEffect();
   calculatorApp.initialize();
 });
-
-
-

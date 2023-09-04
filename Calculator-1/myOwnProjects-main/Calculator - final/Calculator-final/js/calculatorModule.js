@@ -13,7 +13,7 @@ export class CalculatorApp {
     this._backNumber = document.querySelector(".btn--back");
     this._deleteNumber = document.querySelector(".btn--delete");
     this._closeButton = document.querySelector(".btn--close");
-    
+
     this._historyManager = new HistoryManager(this._historyList);
 
     this._buttons = [];
@@ -25,12 +25,10 @@ export class CalculatorApp {
 
   _setupEventListeners() {
     this._closeButton.addEventListener("click", () => {
-
       setTimeout(() => {
-      this._historyContainer.style.opacity = 0;
-      this._historyContainer.style.display = "none";
-      }, 1000)
-      
+        this._historyContainer.style.opacity = 0;
+        this._historyContainer.style.display = "none";
+      }, 1000);
     });
 
     this._calculateResult.addEventListener("click", () => {
@@ -64,7 +62,7 @@ export class CalculatorApp {
     this._equals.addEventListener("click", () => {
       if (this._inputText.value === "") {
         setTimeout(() => {
-         // this._writeNumber.focus();
+          // this._writeNumber.focus();
           this._historyContainer.style.display = "none";
           this._historyContainer.style.opacity = "0";
         }, 1000);
@@ -75,8 +73,6 @@ export class CalculatorApp {
         }, 1000);
       }
     });
-    
-
 
     this._updateEventListeners();
   }
@@ -85,7 +81,6 @@ export class CalculatorApp {
     try {
       const expression = this._writeNumber.value;
       if (expression.trim() === "") {
-        
         return;
       }
       const vyhodnoť = new Function("return " + expression);

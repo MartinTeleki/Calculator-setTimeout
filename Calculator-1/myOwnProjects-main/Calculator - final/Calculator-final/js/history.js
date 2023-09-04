@@ -42,6 +42,5 @@ export class HistoryManager {
   _clearHistory() {
     this._previousResults.splice(0, this._previousResults.length);
     this._historyList.textContent = "";
-  
   }
 }
